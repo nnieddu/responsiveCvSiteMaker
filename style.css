@@ -346,3 +346,7 @@ a {
   color: #fff;
   background-color: #0066aa;
 }
+
+.context-menu a:hover svg {
+  stroke: #fff
+}

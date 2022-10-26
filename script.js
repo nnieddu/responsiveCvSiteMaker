@@ -11,8 +11,21 @@ let targetClickedCP;
 let targetClickedHistory;
 let historySize = 0;
 
+// function download(filename, text) {
+//   var element = document.createElement('a');
+//   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+//   element.setAttribute('download', filename);
+//   element.style.display = 'none';
+//   document.body.appendChild(element);
+//   element.click();
+//   document.body.removeChild(element);
+// }
 
+///////////////////////////////////////////////////////////////////////
+//
 // UTILS FUNCTIONS
+//
+///////////////////////////////////////////////////////////////////////
 
 // Function to check if we clicked inside an element with a specific Class
 function clickInsideElement(e, className) {
@@ -92,17 +105,26 @@ function positionMenu(e) {
   }
 }
 
+///////////////////////////////////////////////////////////////////////
+//
 // ACTIONS FUNCTIONS
+//
+///////////////////////////////////////////////////////////////////////
 
 function doAction(action) {
   if (action === "Remove") {
     targetClicked.target.remove();
+    if (!historySize) historySize++;
   }
   // if (action === "Edit")
   //   target.srcElement.innerText = "wtf";
 }
 
+///////////////////////////////////////////////////////////////////////
+//
 // LISTENER & INIT FUNCTIONS
+//
+///////////////////////////////////////////////////////////////////////
 
 // Listens for contextmenu events (right click).
 function contextListener() {
@@ -113,6 +135,9 @@ function contextListener() {
     if (!taskItemInContext) {
       toggleMenuOn();
       positionMenu(e);
+      targetClicked = e;
+      targetClickedHistory = e.composedPath()[1];
+      targetClickedCP = e.composedPath()[1].outerHTML;
     } else {
       taskItemInContext = null;
       toggleMenuOff();
@@ -142,6 +167,11 @@ function keyupListener() {
     if (e.keyCode === 27) {
       toggleMenuOff();
     }
+
+    if (e.keyCode == 90 && e.ctrlKey && historySize) {
+      targetClickedHistory.outerHTML = targetClickedCP;
+      historySize--;
+    }
   };
 }
 
@@ -155,7 +185,7 @@ function init() {
   contextListener();
   clickListener();
   keyupListener();
-  windowResizeListener();
+  windowResizeListener(); // close ctx menu on windows resize
 }
 
 init();
