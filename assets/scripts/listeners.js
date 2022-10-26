@@ -23,13 +23,14 @@ function clickListener() {
   document.addEventListener("click", function (e) {
     let clickedIsLink = clickInsideElement(e, contextMenuLinkClassName);
     toggleMenuOff();
-    editState = 0;
+    // editState = 0;
+    // document.body.classList.toggle("panel-open");
 
     if (clickedIsLink) {
-      e.preventDefault();
+      // e.preventDefault();
       doAction(clickedIsLink.getAttribute("data-action"));
       toggleMenuOff();
-      return;
+      // return;
     } else {
       let button = e.button;
       if (button === 1) {
@@ -37,10 +38,16 @@ function clickListener() {
       }
     }
 
+    if (editState && e.target !== document.getElementById("colorWell") && !clickedIsLink)
+    {
+      targetClicked = e;
+      document.getElementById("pannel-target").innerText = targetClicked.target.innerText;
+    }
+
     // --------------------------------
     // ----------- mobile nav bar -----
     // --------------------------------
-    targetClicked = e;
+    // targetClicked = e;
     if (
       removeBtnState &&
       !clickedIsLink &&
@@ -59,6 +66,7 @@ function keyupListener() {
     if (e.keyCode === 27) {
       toggleMenuOff();
       editState = 0;
+      document.body.classList.toggle("panel-open");
       return;
     }
 
