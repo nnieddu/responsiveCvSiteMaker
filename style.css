@@ -223,8 +223,8 @@ a {
 }
 
 
-/* .nav {
-  height: 4.5%;
+.nav {
+  min-height: 4.5%;
   width: 100%;
   background-color: #ffffff;
   border: 4px solid rgba(0, 0, 0, 0.616);
@@ -246,7 +246,7 @@ a {
 .nav > .nav-links > svg:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-} */
+}
 
 /* ------------------------------------------------------- */
 /* media queries / responsive : for big or desktop screen  */
@@ -349,4 +349,9 @@ a {
 
 .context-menu a:hover svg {
   stroke: #fff
+}
+
+p::after {
+  content: attr(data-end) ;
+  color: rgb(0, 18, 180) ;
 }

@@ -12,6 +12,11 @@ let history;
 let historyPath;
 let historySize = 0;
 
+let editState = 0;
+
+let spaceNeeded = 0;
+
+
 // function download(filename, text) {
 //   var element = document.createElement('a');
 //   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -119,8 +124,9 @@ function doAction(action) {
   }
   if (action === "Edit")
   {
-    targetClicked.srcElement.innerText = "";
-
+    editState = 1;
+    // targetClicked.srcElement.style.color = "red";
+    targetClicked.srcElement.style.backgroundColor = "rgba(255, 255, 255, 0.5);";
   }
 }
 
@@ -153,6 +159,9 @@ function clickListener() {
   document.addEventListener("click", function (e) {
     let clickeElIsLink = clickInsideElement(e, contextMenuLinkClassName);
     toggleMenuOff();
+    editState = 0;
+    // if (targetClicked)
+    //   targetClicked.srcElement.style.backgroundColor = "rgba(255, 255, 255, 0);";
     if (clickeElIsLink) {
       e.preventDefault();
       doAction(clickeElIsLink.getAttribute("data-action"));
@@ -167,15 +176,44 @@ function clickListener() {
 }
 
 function keyupListener() {
-  window.onkeyup = function (e) {
+  window.onkeydown = function (e) {
     if (e.keyCode === 27) {
       toggleMenuOff();
+      editState = 0;
+      return; 
     }
 
     if (e.keyCode == 90 && e.ctrlKey && historySize) {
       historyPath.outerHTML = history;
       historySize--;
     }
+
+    if (editState)
+    {
+      e.preventDefault();
+      if (e.keyCode == 8 || e.key === "Backspace" || e.key === "Delete") {
+        targetClicked.srcElement.innerText = targetClicked.srcElement.innerText.slice(0, -1);
+        return;
+      }
+      if (e.keyCode == 13 || e.key === "Enter") {
+        targetClicked.srcElement.innerText += "\n";
+        return;
+      }
+      if (e.keyCode == 32) {
+        spaceNeeded = 1;
+        return;
+      }
+      else {
+        if (spaceNeeded)
+          targetClicked.srcElement.innerText += (" " + e.key);
+        else
+          targetClicked.srcElement.innerText += e.key;
+      }
+    }
+
+    console.log(e.keyCode);
+    console.log(e.key);
+    spaceNeeded = 0;
   };
 }
 
