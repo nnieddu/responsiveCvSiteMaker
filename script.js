@@ -116,8 +116,11 @@ function doAction(action) {
     targetClicked.target.remove();
     if (!historySize) historySize++;
   }
-  // if (action === "Edit")
-  //   target.srcElement.innerText = "wtf";
+  if (action === "Edit")
+  {
+    targetClicked.srcElement.innerText = "";
+
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////
