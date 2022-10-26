@@ -36,6 +36,8 @@
     />
     <link rel="manifest" href="./assets/favicons/site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="./assets/scripts/listeners.js"></script>
+    <script defer src="./assets/scripts/utils.js"></script>
     <script defer src="./script.js"></script>
   </head>
   <body>
@@ -44,7 +46,6 @@
         <li>
           <a href="#" class="context-menu-action" data-action="Edit">
             <svg
-              id="editBtn"
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-pencil-minus"
               width="16"
@@ -70,7 +71,6 @@
         <li>
           <a href="#" class="context-menu-action" data-action="Remove">
             <svg
-              id="removeBtn"
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-trash"
               width="16"
@@ -187,7 +187,8 @@
         <li>Permis B</li>
         <li id="perso-adress">Fontaines-sur-Saône, 69270</li>
         <li>
-          <a href="mailto:nicolas.nieddu@free.fr">nicolas.nieddu@free.fr</a>
+          <a href="#">nicolas.nieddu@free.fr</a>
+          <!-- <a href="mailto:nicolas.nieddu@free.fr">nicolas.nieddu@free.fr</a> -->
         </li>
         <li>06.79.05.65.55</li>
         <li><br /><br /></li>
@@ -249,8 +250,27 @@
     </div>
 
     <div class="nav">
-      <div class="nav-title">CvMaker</div>
+      <!-- <div class="nav-title">CvMaker</div> -->
       <div class="nav-links">
+        <svg
+          id="cursorBtn"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-pointer"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="#0066aa"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M6 6l4.153 11.793a0.365 .365 0 0 0 .331 .207a0.366 .366 0 0 0 .332 -.207l2.184 -4.793l4.787 -1.994a0.355 .355 0 0 0 .213 -.323a0.355 .355 0 0 0 -.213 -.323l-11.787 -4.36z"
+          ></path>
+          <path d="M13.5 13.5l4.5 4.5"></path>
+        </svg>
         <svg
           id="removeBtn"
           xmlns="http://www.w3.org/2000/svg"
@@ -318,5 +338,4 @@
       <input type="submit" value="Download" />
     </form> -->
   </body>
-
 </html>

@@ -222,19 +222,22 @@ a {
   border-radius: 8px;
 }
 
-
+/* ------------------------------------------------------- */
+/* mobile nav bar -----------------------------------------*/ 
+/* ------------------------------------------------------- */
 .nav {
-  min-height: 4.5%;
+  min-height: 4%;
   width: 100%;
+  max-width: 100vw;
   background-color: #ffffff;
   border: 4px solid rgba(0, 0, 0, 0.616);
   display: grid;
-  grid-template-columns: 25% 75%;
+  /* grid-template-columns: 25% 75%; */
   order: 3;
 }
 
 .nav > .nav-title {
-  font-size: 25px;
+  font-size: 1.4rem;
   color: #0066aa;
   padding: 10px 10px 10px 10px;
 }
@@ -244,69 +247,19 @@ a {
 }
 
 .nav > .nav-links > svg:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 }
 
-/* ------------------------------------------------------- */
-/* media queries / responsive : for big or desktop screen  */
-/* ------------------------------------------------------- */
-
-@media screen and (min-width: 800px) {
-  /* h1::before {
-    color: red;
-    content: "2";
-  } */
-
-  body {
-    flex-direction: row-reverse;
-  }
-
-  .nav {
-    border-radius: 0px 0px 15px 15px;
-    position: absolute;
-  }
-
-  #left-pannel {
-    border-radius: 20px 0px 0px 20px;
-    padding-left: 0%;
-    min-width: 35%;
-  }
-
-  #logo-ctn {
-    margin-left: 6%;
-  }
-
-  #right-pannel {
-    border-radius: 0 20px 20px 0;
-    padding: 15px 25px;
-  }
+.nav > .nav-links > svg {
+  padding-bottom: 2px;
+  border-radius: 10px;
+  width: 14%;
 }
 
-@media screen and (min-width: 1250px) {
-  /* h1::before {
-    color: red;
-    content: "3";
-  } */
-
-  body {
-    font-size: 1.1rem;
-  }
-
-  #left-pannel {
-    min-width: 400px;
-  }
-
-  #logo-ctn {
-    margin-left: 3%;
-  }
-
-  #right-pannel {
-    max-width: 750px;
-  }
-}
-
-/* context menu */
+/* ------------------------------------------------------- */
+/* context menu -------------------------------------------*/ 
+/* ------------------------------------------------------- */
 .context-menu {
   display: none;
   position: absolute;
@@ -354,4 +307,63 @@ a {
 p::after {
   content: attr(data-end) ;
   color: rgb(0, 18, 180) ;
+}
+
+/* ------------------------------------------------------- */
+/* media queries / responsive : for big or desktop screen  */
+/* ------------------------------------------------------- */
+
+@media screen and (min-width: 800px) {
+  h1::before {
+    color: red;
+    content: "2";
+  }
+
+  body {
+    flex-direction: row-reverse;
+  }
+
+  .nav {
+    border-radius: 0px 0px 15px 15px;
+    position: absolute;
+    opacity: 0;
+  }
+
+  #left-pannel {
+    border-radius: 20px 0px 0px 20px;
+    padding-left: 0%;
+    min-width: 35%;
+  }
+
+  #logo-ctn {
+    margin-left: 6%;
+  }
+
+  #right-pannel {
+    border-radius: 0 20px 20px 0;
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  h1::before {
+    color: red;
+    content: "3";
+  }
+
+  body {
+    font-size: 1.1rem;
+  }
+
+  #left-pannel {
+    min-width: 400px;
+  }
+
+  #logo-ctn {
+    margin-left: 3%;
+  }
+
+  #right-pannel {
+    max-width: 750px;
+  }
 }
