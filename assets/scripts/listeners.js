@@ -1,11 +1,5 @@
 "use strict";
 
-///////////////////////////////////////////////////////////////////////
-//
-// LISTENER & INIT FUNCTIONS
-//
-///////////////////////////////////////////////////////////////////////
-
 // Listens for contextmenu events (right click).
 function contextListener() {
   document.addEventListener("contextmenu", function (e) {
@@ -44,16 +38,18 @@ function clickListener() {
     }
 
     // --------------------------------
-    // ----------- mobile : -----------
+    // ----------- mobile nav bar -----
     // --------------------------------
     targetClicked = e;
-    if (removeBtnState &&
+    if (
+      removeBtnState &&
       !clickedIsLink &&
       !clickInsideElement(e, "nav-links") &&
-      targetClicked) {
-        doAction("Remove");
-        removeBtnState = 0;
-        removeBtn.style.backgroundColor = "white";
+      targetClicked
+    ) {
+      doAction("Remove");
+      removeBtnState = 0;
+      removeBtn.style.backgroundColor = "white";
     }
   });
 }
@@ -71,6 +67,10 @@ function keyupListener() {
       historySize--;
     }
 
+    if (e.keyCode == 9 || e.key === "Tab" )
+      document.body.classList.toggle('panel-open');
+
+
     if (editState) {
       e.preventDefault();
       if (e.keyCode == 8 || e.key === "Backspace" || e.key === "Delete") {
@@ -82,6 +82,9 @@ function keyupListener() {
         targetClicked.srcElement.innerText += "\n";
         return;
       }
+      if (e.keyCode == 17 || e.key === "Control") {
+        return;
+      }
       if (e.keyCode == 32) {
         spaceNeeded = 1;
         return;
@@ -91,8 +94,8 @@ function keyupListener() {
       }
     }
 
-    // console.log(e.keyCode);
-    // console.log(e.key);
+    console.log(e.keyCode);
+    console.log(e.key);
     spaceNeeded = 0;
   };
 }
@@ -115,19 +118,10 @@ function mobileBtnListener() {
 
   editBtn.addEventListener("click", () => {
     editBtn.style.backgroundColor = "antiquewhite";
+    doAction("Edit");
   });
 
   colorPickBtn.addEventListener("click", () => {
     colorPickBtn.style.backgroundColor = "red";
   });
 }
-
-function init() {
-  contextListener();
-  clickListener();
-  keyupListener();
-  mobileBtnListener();
-  windowResizeListener(); // close ctx menu on windows resize
-}
-
-init();

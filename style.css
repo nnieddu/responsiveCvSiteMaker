@@ -39,9 +39,16 @@ body {
   justify-content: center;
   opacity: 1;
   min-height: 100vh;
+
   /* animation-name: fade-in;
   animation-timing-function: ease-in-out;
   animation-duration: 1.2s; */
+
+  transition: 0.8s ease-out;
+  overflow-x: hidden;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1::selection,
@@ -223,45 +230,10 @@ a {
 }
 
 /* ------------------------------------------------------- */
-/* mobile nav bar -----------------------------------------*/ 
-/* ------------------------------------------------------- */
-.nav {
-  min-height: 4%;
-  width: 100%;
-  max-width: 100vw;
-  background-color: #ffffff;
-  border: 4px solid rgba(0, 0, 0, 0.616);
-  display: grid;
-  /* grid-template-columns: 25% 75%; */
-  order: 3;
-}
-
-.nav > .nav-title {
-  font-size: 1.4rem;
-  color: #0066aa;
-  padding: 10px 10px 10px 10px;
-}
-
-.nav > .nav-links > svg {
-  margin-left: 30px;
-}
-
-.nav > .nav-links > svg:hover {
-  background-color: rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-}
-
-.nav > .nav-links > svg {
-  padding-bottom: 2px;
-  border-radius: 10px;
-  width: 14%;
-}
-
-/* ------------------------------------------------------- */
 /* context menu -------------------------------------------*/ 
 /* ------------------------------------------------------- */
 .context-menu {
-  display: none;
+  /* display: none; */
   position: absolute;
   z-index: 1;
   padding: 12px 0;
@@ -270,10 +242,13 @@ a {
   border: solid 1px #dfdfdf;
   box-shadow: 1px 1px 2px #cfcfcf;
   border-radius: 10px;
+  transform: scale(0);
+  display: block;
+  transition: transform 200ms ease-in-out;
 }
 
 .context-menu-active {
-  display: block;
+  transform: scale(1);
 }
 
 .context-menu ul {
@@ -304,10 +279,104 @@ a {
   stroke: #fff
 }
 
-p::after {
-  content: attr(data-end) ;
-  color: rgb(0, 18, 180) ;
+/* ------------------------------------------------------- */
+/* hidden-panel -------------------------------------------*/ 
+/* ------------------------------------------------------- */
+.panel-open {
+  /* left: -30%; */
+  transform: translateX(-30%);
+  transition: 0.8s ease-out;
 }
+
+#hidden-panel {
+  /* background: #333; */
+  background: rgba(42, 42, 46, 1);
+  color: #666;
+  font-size: 0.875rem;
+  height: 100%;
+  position: absolute;
+  right: -30%;
+  top: 0;
+  width: 30%;
+  opacity: 0;
+}
+
+#hidden-panel a {
+  color: #999;
+  transition: color 0.3s ease-out;
+}
+#hidden-panel a:hover {
+  color: #fff;
+}
+
+.hidden-panel-content {
+  padding: 3em 10%;
+}
+
+.hidden-panel-nav {
+  border-bottom: 1px solid #666;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.25);
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  text-transform: uppercase;
+}
+
+.hidden-panel-nav ul {
+  list-style: none;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.hidden-panel-nav li {
+  padding: 0.25em 0;
+}
+
+.hidden-panel-text {
+  line-height: 1.5;
+}
+.hidden-panel-text p {
+  margin-bottom: 1.5em;
+  font-size: 1.1rem;
+}
+.hidden-panel-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------- */
+/* mobile nav bar -----------------------------------------*/ 
+/* ------------------------------------------------------- */
+.nav {
+  min-height: 4%;
+  width: 100%;
+  max-width: 100vw;
+  background-color: #ffffff;
+  border: 4px solid rgba(0, 0, 0, 0.616);
+  display: grid;
+  order: 3;
+}
+
+.nav > .nav-title {
+  font-size: 1.4rem;
+  color: #0066aa;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-links > svg {
+  margin-left: 30px;
+}
+
+.nav > .nav-links > svg:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.nav > .nav-links > svg {
+  padding-bottom: 2px;
+  border-radius: 10px;
+  width: 12%;
+}
+
+
 
 /* ------------------------------------------------------- */
 /* media queries / responsive : for big or desktop screen  */
@@ -343,6 +412,7 @@ p::after {
     border-radius: 0 20px 20px 0;
     padding: 15px 25px;
   }
+
 }
 
 @media screen and (min-width: 1250px) {
@@ -366,4 +436,15 @@ p::after {
   #right-pannel {
     max-width: 750px;
   }
+
+  #hidden-panel {
+    opacity: 0;
+    right: 0%;
+    width: 30%;
+  }
+
+  .panel-open {
+    transform: translateX(-15%);
+  }
+  
 }
