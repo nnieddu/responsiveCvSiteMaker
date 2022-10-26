@@ -7,8 +7,9 @@ let menu = document.querySelector("#context-menu");
 let menuState = 0;
 
 let targetClicked;
-let targetClickedCP;
-let targetClickedHistory;
+
+let history;
+let historyPath;
 let historySize = 0;
 
 // function download(filename, text) {
@@ -139,8 +140,8 @@ function contextListener() {
       toggleMenuOn();
       positionMenu(e);
       targetClicked = e;
-      targetClickedHistory = e.composedPath()[1];
-      targetClickedCP = e.composedPath()[1].outerHTML;
+      historyPath = e.composedPath()[1];
+      history = e.composedPath()[1].outerHTML;
     } else {
       taskItemInContext = null;
       toggleMenuOff();
@@ -172,7 +173,7 @@ function keyupListener() {
     }
 
     if (e.keyCode == 90 && e.ctrlKey && historySize) {
-      targetClickedHistory.outerHTML = targetClickedCP;
+      historyPath.outerHTML = history;
       historySize--;
     }
   };
