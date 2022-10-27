@@ -1,5 +1,8 @@
 "use strict";
 
+/* ------------------------------------------------------- */
+/* PANNEL FTS ---------------------------------------------*/
+/* ------------------------------------------------------- */
 function togglePanSide() {
   if (hiddenPannel.style.left !== "-30%") {
     document.body.classList.toggle("panel-open-right");
@@ -18,7 +21,6 @@ function togglePanSide() {
 }
 
 function toggleHiddenPannel() {
-  // document.body.style.cursor = "url(./../../cursor.svg) 4 12, auto";
   editState = 1;
   if (hiddenPannel.style.opacity == 1)
     hiddenPannel.style.opacity = 0;
@@ -29,6 +31,13 @@ function toggleHiddenPannel() {
 
     document.body.classList.toggle("panel-open-left");
 }
+
+/* ------------------------------------------------------- */
+/* Color --------------------------------------------------*/
+/* ------------------------------------------------------- */
+// 
+
+
 
 /* ------------------------------------------------------- */
 /* FONT SIZE ----------------------------------------------*/

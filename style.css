@@ -299,8 +299,8 @@ a {
 }
 
 #hidden-panel {
-  background: rgb(30, 30, 30);
-  color: #666;
+  background: rgb(37, 37, 37);
+  color: #6667;
   font-size: 0.875rem;
   height: 100%;
   position: absolute;
@@ -313,6 +313,8 @@ a {
 }
 
 #changePanSide {
+  font-weight: 600;
+  color: rgb(175, 0, 0);
   top: 0;
   width: 80%;
   min-height: 2%;
@@ -322,7 +324,6 @@ a {
   padding: 2% 2%;
   display: block;
   text-transform: uppercase;
-  color: #999;
   transition: color 0.5 s ease-out;
   box-shadow: 1px 1px 5px 0px rgba(71, 71, 71, 0.6);
   border-radius: 8px;

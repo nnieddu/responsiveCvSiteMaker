@@ -4,12 +4,11 @@ const contextMenuLinkClassName = "context-menu-action";
 const contextMenuActive = "context-menu-active";
 const contextContainerClassName = "context-menu";
 const menu = document.querySelector("#context-menu");
-let menuState = 0;
 
 // Listens for contextmenu events (right click).
 function contextListener() {
   document.addEventListener("contextmenu", function (e) {
-    let taskItemInContext = clickInsideElement(e, contextContainerClassName);
+    let taskItemInContext = clickOnElem(e, contextContainerClassName);
 
     e.preventDefault();
     if (!taskItemInContext) {
@@ -27,7 +26,7 @@ function contextListener() {
 
 function clickListener() {
   document.addEventListener("click", function (e) {
-    let clickedIsLink = clickInsideElement(e, contextMenuLinkClassName);
+    let clickedIsLink = clickOnElem(e, contextMenuLinkClassName);
     contextualMenuOff();
     targetClicked = e;
     if (targetClicked)
@@ -51,7 +50,7 @@ function clickListener() {
       }
     }
 
-    clickedIsLink = clickInsideElement(e, contextContainerClassName);
+    clickedIsLink = clickOnElem(e, contextContainerClassName);
     if (!clickedIsLink) targetClicked = e;
 
     // --------------------------------
@@ -76,7 +75,7 @@ function clickListener() {
     if (
       removeBtnState &&
       !clickedIsLink &&
-      !clickInsideElement(e, "nav-links") &&
+      !clickOnElem(e, "nav-links") &&
       targetClicked
     ) {
       doAction("Remove");

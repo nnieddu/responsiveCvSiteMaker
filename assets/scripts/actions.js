@@ -7,13 +7,14 @@ function doAction(action) {
     return;
   }
 
-  // if (action === "Edit") {
-  //   toggleHiddenPannel();
-  // }
+  if (action === "Edit") {
+    toggleHiddenPannel();
+  }
 
   // if (colorEditMode) startup();
 
-//   if (action === "txtColor") {
-//     startup();
-//   }
+  if (action === "txtColor") {
+    document.body.style.cursor = "url(./../../cursor.svg) 4 12, auto";
+    startup();
+  }
 }

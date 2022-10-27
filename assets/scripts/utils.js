@@ -1,5 +1,7 @@
 "use strict";
 
+let menuState = 0;
+
 // function download(filename, text) {
 //   var element = document.createElement('a');
 //   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -10,8 +12,9 @@
 //   document.body.removeChild(element);
 // }
 
-// Function to check if we clicked inside an element with a specific Class
-function clickInsideElement(e, className) {
+
+// Function to check if we dont click on a ui elem and return this elem
+function clickOnElem(e, className) {
   let clickedElem = e.srcElement || e.target;
 
   if (clickedElem.classList.contains(className)) {
@@ -43,33 +46,13 @@ function contextualMenuOff() {
 function positionMenu(e) {
   let menuWidth;
   let menuHeight;
-  let clickCoords;
   let clickCoordsX;
   let clickCoordsY;
   let windowWidth;
   let windowHeight;
-  let posx = 0;
-  let posy = 0;
 
-  if (!e) e = window.event;
-  if (e.pageX || e.pageY) {
-    posx = e.pageX;
-    posy = e.pageY;
-  } else if (e.clientX || e.clientY) {
-    posx =
-      e.clientX +
-      document.body.scrollLeft +
-      document.documentElement.scrollLeft;
-    posy =
-      e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-  }
-  clickCoords = {
-    x: posx,
-    y: posy,
-  };
-
-  clickCoordsX = clickCoords.x;
-  clickCoordsY = clickCoords.y;
+  clickCoordsX = e.pageX;
+  clickCoordsY = e.pageY;
   menuWidth = menu.offsetWidth + 4;
   menuHeight = menu.offsetHeight + 4;
   windowWidth = window.innerWidth;

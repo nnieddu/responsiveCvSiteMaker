@@ -7,7 +7,6 @@ window.addEventListener("load", startup, false);
 function startup() {
   colorWell = document.querySelector("#colorWell");
   colorWell.value = defaultColor;
-//   console.log(targetClicked.target.style.color)
   colorWell.addEventListener("input", updateFirst, false);
   colorWell.addEventListener("change", updateAll, false);
   colorWell.select();

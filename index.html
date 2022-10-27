@@ -205,7 +205,7 @@
     <!-- ---------------------------------->
     <!-- --- context-menu ----------------->
     <!-- ---------------------------------->
-    <nav id="context-menu" class="context-menu">
+    <nav id="context-menu" class="context-menu unclickable">
       <ul>
         <li>
           <a href="#" class="context-menu-action" data-action="Edit">
@@ -254,27 +254,23 @@
     <!-- ---------------------------------->
     <!-- ---hidden-panel ------------------>
     <!-- ---------------------------------->
-    <div id="hidden-panel">
+    <div id="hidden-panel" class="unclickable">
       <div class="hidden-panel-content">
         <nav class="hidden-panel-nav">
-          <a href="#" id="changePanSide"><span id="arrow-left"> ◄ </span> Move pannel <span id="arrow-right"> ► </span></a>
+          <a href="#" id="changePanSide"
+            ><span id="arrow-left"> ◄ </span> Move pannel
+            <span id="arrow-right"> ► </span></a
+          >
           <h3 id="pannel-target">Edit Pannel</h3>
           <div class="hidden-panel-text"></div>
           <ul id="pannel-available-options">
             <li>
-              <label for="colorWell"
-                >Color
-                <a
-                  class="context-menu-action"
-                  href="#"
-                  data-action="txtColor"
-                ></a
-              ></label>
+              <label class="context-menu-action" for="colorWell" data-action="txtColor">Color </label>
               <input
                 id="colorWell"
                 class="context-menu-action"
                 type="color"
-                value="#ff0000"
+                value="#0066aa"
               />
             </li>
             <li>
@@ -291,8 +287,8 @@
         </nav>
         <div class="hidden-panel-text">
           <p>
-            Apres avoir clique sur "Editer", vous pouvez modifier le text avec votre clavier (s'il s'agit d'un element avec du
-            texte.)
+            Apres avoir clique sur "Editer", vous pouvez modifier le text avec
+            votre clavier (s'il s'agit d'un element avec du texte.)
           </p>
         </div>
       </div>
