@@ -2,8 +2,10 @@
 
 function doAction(action) {
   if (action === "Remove") {
+    console.log("REMOVE")
     targetClicked.target.remove();
-    if (!historySize) historySize++;
+    if (!historySize) 
+      historySize++;
     return;
   }
 

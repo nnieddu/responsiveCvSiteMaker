@@ -7,13 +7,13 @@ function togglePanSide() {
   if (hiddenPannel.style.left !== "-30%") {
     document.body.classList.toggle("panel-open-right");
     hiddenPannel.style.left = "-30%";
-    changePanSide.style.paddingLeft = "0%";
+    changePanSideBtn.style.paddingLeft = "0%";
     document.getElementById("arrow-right").style.opacity = 1;
     document.getElementById("arrow-left").style.opacity = 0;
     return;
   }
   document.body.classList.toggle("panel-open-right");
-  changePanSide.style.paddingLeft = "13%";
+  changePanSideBtn.style.paddingLeft = "13%";
   document.getElementById("arrow-right").style.opacity = 0;
   document.getElementById("arrow-left").style.opacity = 1;
   hiddenPannel.style.left = "unset";

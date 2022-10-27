@@ -38,6 +38,8 @@
     />
     <link rel="manifest" href="./assets/favicons/site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="./assets/scripts/history.js"></script>
+    <script defer src="./assets/scripts/mobile.js"></script>
     <script defer src="./assets/scripts/actions.js"></script>
     <script defer src="./assets/scripts/keyboardEvent.js"></script>
     <script defer src="./assets/scripts/edit.js"></script>
@@ -257,14 +259,14 @@
     <div id="hidden-panel" class="unclickable">
       <div class="hidden-panel-content">
         <nav class="hidden-panel-nav">
-          <a href="#" id="changePanSide"
+          <a href="#" id="changePanSideBtn"
             ><span id="arrow-left"> ◄ </span> Move pannel
             <span id="arrow-right"> ► </span></a
           >
           <h3 id="pannel-target">Edit Pannel</h3>
           <div class="hidden-panel-text"></div>
           <ul id="pannel-available-options">
-            <li>
+            <li >
               <label class="context-menu-action" for="colorWell" data-action="txtColor">Color </label>
               <input
                 id="colorWell"
@@ -297,8 +299,8 @@
     <!-- ---------------------------------->
     <!-- ---Mobile nav -------------------->
     <!-- ---------------------------------->
-    <div class="nav">
-      <!-- <div class="nav-title">CvMaker</div> -->
+    <!-- <div class="nav">
+      <div class="nav-title">CvMaker</div>
       <div class="nav-links">
         <svg
           id="cursorBtn"
@@ -377,12 +379,13 @@
           <line x1="12" y1="4" x2="12" y2="16"></line>
         </svg>
       </div>
-    </div>
+    </div> -->
 
     <!-- DOWNLOAD FORM  -->
     <!-- <form onsubmit="download('index.html', this['text'].value)">
       <textarea name="text"></textarea>
       <input type="submit" value="Download" />
     </form> -->
+
   </body>
 </html>

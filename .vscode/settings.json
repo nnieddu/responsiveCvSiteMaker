@@ -1,0 +1,8 @@
+// {
+//     "liveServer.settings.https": {
+//     "enable": true, //set it true to enable the feature.
+//     "cert": "C:\\Users\\Douwi\\Desktop\\REPO\\.vscode\\sslk\\server.crt", //full path of the certificate
+//     "key": "C:\\Users\\Douwi\\Desktop\\REPO\\.vscode\\sslk\\server.key", //full path of the certificate
+//     "passphrase": "12345"
+//     }
+// }

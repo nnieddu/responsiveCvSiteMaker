@@ -18,13 +18,13 @@ const editBtn = document.querySelector("#editBtn");
 const colorPickBtn = document.querySelector("#colorPickBtn");
 const hiddenPannel = document.getElementById("hidden-panel");
 
-const changePanSide = document.getElementById("changePanSide");
+const changePanSideBtn = document.getElementById("changePanSideBtn");
 
 function init() {
   contextListener();
   clickListener();
   keyupListener();
-  mobileBtnListener();
+  // mobileBtnListener();
   windowResizeListener(); // close ctx menu on windows resize
 }
 
