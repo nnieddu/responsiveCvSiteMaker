@@ -44,7 +44,6 @@
     <script defer src="./assets/scripts/keyboardEvent.js"></script>
     <script defer src="./assets/scripts/edit.js"></script>
     <script defer src="./assets/scripts/colorsHandling.js"></script>
-    <script defer src="./assets/scripts/dataControl.js"></script>
     <script defer src="./assets/scripts/utils.js"></script>
     <script defer src="./assets/scripts/listeners.js"></script>
     <script defer src="./script.js"></script>
@@ -261,12 +260,11 @@
         <nav class="hidden-panel-nav">
           <a href="#" id="changePanSideBtn"
             ><span id="arrow-left"> ◄ </span> Move pannel
-            <span id="arrow-right"> ► </span></a
-          >
+            <span id="arrow-right"> ► </span></a>
           <h3 id="pannel-target">Edit Pannel</h3>
           <div class="hidden-panel-text"></div>
           <ul id="pannel-available-options">
-            <li >
+            <li class="context-menu-action" >
               <label class="context-menu-action" for="colorWell" data-action="txtColor">Color </label>
               <input
                 id="colorWell"
@@ -287,7 +285,7 @@
             </li>
           </ul>
         </nav>
-        <div class="hidden-panel-text">
+        <div class="hidden-panel-text context-menu-action">
           <p>
             Apres avoir clique sur "Editer", vous pouvez modifier le text avec
             votre clavier (s'il s'agit d'un element avec du texte.)
@@ -299,11 +297,12 @@
     <!-- ---------------------------------->
     <!-- ---Mobile nav -------------------->
     <!-- ---------------------------------->
-    <!-- <div class="nav">
-      <div class="nav-title">CvMaker</div>
+    <div id="mobileNavBar">
+      <!-- <div class="nav-title">CvMaker</div> -->
       <div class="nav-links">
         <svg
           id="cursorBtn"
+          class="context-menu-action"
           width="48"
           height="48"
           viewBox="0 0 24 24"
@@ -319,6 +318,7 @@
         </svg>
         <svg
           id="removeBtn"
+          class="context-menu-action"
           width="48"
           height="48"
           viewBox="0 0 24 24"
@@ -335,6 +335,7 @@
         </svg>
         <svg
           id="editBtn"
+          class="context-menu-action"
           width="48"
           height="48"
           viewBox="0 0 24 24"
@@ -351,6 +352,7 @@
         </svg>
         <svg
           id="colorPickBtn"
+          class="context-menu-action"
           width="48"
           height="48"
           viewBox="0 0 24 24"
@@ -366,6 +368,7 @@
         </svg>
         <svg
           id="downloadBtn"
+          class="context-menu-action"
           width="48"
           height="48"
           viewBox="0 0 24 24"
@@ -379,7 +382,7 @@
           <line x1="12" y1="4" x2="12" y2="16"></line>
         </svg>
       </div>
-    </div> -->
+    </div>
 
     <!-- DOWNLOAD FORM  -->
     <!-- <form onsubmit="download('index.html', this['text'].value)">

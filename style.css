@@ -32,10 +32,6 @@
   }
 }
 
-/* html {
-  overflow-x: hidden;
-} */
-
 body {
   margin: 0;
   display: flex;
@@ -306,7 +302,7 @@ a {
   position: absolute;
   right: -30%;
   top: 0;
-  width: 30%;
+  width: 45%;
   transition: 0.3s ease-out;
   opacity: 0;
   z-index: 1;
@@ -421,8 +417,8 @@ a {
 /* ------------------------------------------------------- */
 /* mobile nav bar -----------------------------------------*/
 /* ------------------------------------------------------- */
-.nav {
-  min-height: 8%;
+#mobileNavBar {
+  min-height: 45px;
   max-height: 8%;
   width: 100%;
   max-width: 100vw;
@@ -434,26 +430,28 @@ a {
   top: 0;
 }
 
-/* .nav > .nav-title {
+/* ///////////////////////// */
+#mobileNavBar > .nav-title {
   font-size: 1.4rem;
   color: #0066aa;
   padding: 10px 10px 10px 10px;
-} */
+} /* ///////////////////////// */
 
-.nav > .nav-links > svg {
+
+#mobileNavBar > .nav-links > svg {
   margin-left: 20px;
 }
 
-/* .nav > .nav-links:first-child {
+/* #mobileNavBar > .nav-links:first-child {
   margin-left: 5px;
 } */
 
-.nav > .nav-links > svg:hover {
+#mobileNavBar > .nav-links > svg:hover {
   background-color: rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 }
 
-.nav > .nav-links > svg {
+#mobileNavBar > .nav-links > svg {
   padding-bottom: 2px;
   border-radius: 10px;
   width: 11%;
@@ -473,7 +471,7 @@ a {
     flex-direction: row-reverse;
   }
 
-  .nav {
+  #mobileNavBar {
     border-radius: 0px 0px 15px 15px;
     position: absolute;
     opacity: 0;
@@ -493,6 +491,11 @@ a {
     border-radius: 0 20px 20px 0;
     padding: 15px 25px;
   }
+
+  #hidden-panel {
+    width: 30%;
+  }
+ 
 }
 
 @media screen and (min-width: 1250px) {
@@ -518,8 +521,8 @@ a {
   }
 
   #hidden-panel {
-    /* margin-right: 20%;
-    margin-left: 20%; */
+    margin-right: 20%;
+    margin-left: 20%;
     order: 1;
   }
 }

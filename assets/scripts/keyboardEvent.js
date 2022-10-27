@@ -1,9 +1,6 @@
 "use strict";
 
 function manageKeyboardInput(e) {
-  // console.log(e.keyCode);
-  // console.log(e.key);
-
   if (e.keyCode == 9 || e.key === "Tab") {
     e.preventDefault();
     toggleHiddenPannel();

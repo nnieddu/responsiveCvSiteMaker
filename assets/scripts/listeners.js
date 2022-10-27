@@ -11,13 +11,11 @@ const menu = document.querySelector("#context-menu");
 function contextListener() {
   document.addEventListener("contextmenu", function (e) {
     let taskItemInContext = clickOnElem(e, contextContainerClassName);
-    console.log("CONTEXT :" + taskItemInContext);
     e.preventDefault();
     if (!taskItemInContext) {
       contextualMenuOn();
       positionMenu(e);
       targetClicked = e;
-      historyHandling(e);
     }
   });
 }
@@ -29,25 +27,21 @@ function clickListener() {
   document.addEventListener("click", function (e) {
     let clickedIsLink = clickOnElem(e, contextMenuLinkClassName);
     contextualMenuOff();
-
-    // document.getElementById("pannel-target").innerText =
-    //   "[ " + targetClicked.target.localName + " ]  \n\n" + targetClicked.target.innerText;
-
-    // ---------- CONTEXT MENU CLICK HANDLING :--------------
-    if (clickedIsLink) {
-      doAction(clickedIsLink.getAttribute("data-action"));
-      contextualMenuOff();
-    } else {
-      // let button = e.button;
-      // if (button === 1) {
-      //   contextualMenuOff();
-      // }
+    
+    if (e) {
       targetClicked = e;
       document.getElementById("pannel-target").innerText ="[ " + 
-      targetClicked.target.localName + " ]  \n\n" + targetClicked.target.innerText;
+        targetClicked.target.localName + " ]  \n\n" + targetClicked.target.innerText;
+      }
+
+    if (clickedIsLink) {
+      historyHandling(e);
+      doAction(clickedIsLink.getAttribute("data-action"));
+      contextualMenuOff();
     }
+    // if (removeState)
+    //   doAction("Remove");
   });
-  // ---------- CONTEXT MENU CLICK HANDLING------------------
 }
 
 /* ------------------------------------------------------- */
@@ -69,5 +63,5 @@ function windowResizeListener() {
 /* Buttons listeners --------------------------------------*/
 /* ------------------------------------------------------- */
 changePanSideBtn.addEventListener("click", () => {
-  togglePanSide();
+    togglePanSide();
 });
