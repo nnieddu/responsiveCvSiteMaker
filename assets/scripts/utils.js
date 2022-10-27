@@ -26,14 +26,14 @@ function clickInsideElement(e, className) {
   return false;
 }
 
-function toggleMenuOn() {
+function contextualMenuOn() {
   if (menuState !== 1) {
     menuState = 1;
     menu.classList.add(contextMenuActive);
   }
 }
 
-function toggleMenuOff() {
+function contextualMenuOff() {
   if (menuState !== 0) {
     menuState = 0;
     menu.classList.remove(contextMenuActive);

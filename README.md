@@ -1,6 +1,6 @@
 # responsiveCvSiteMaker
 
-Simple, fast and light WebApp/Interface that allow you to edit the DOM   
+Simple, and light WebApp/Interface that allow you to edit the DOM   
 to custom a responsive CV site like this : https://nnieddu.github.io/
     
     

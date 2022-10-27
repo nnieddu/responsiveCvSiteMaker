@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curriculum vitae NIEDDU Nicolas</title>
     <meta
-      name="description"
-      content="Mon curriculum vitae vesrion web pour un emploi de développeur front-end"
+    name="description"
+    content="Mon curriculum vitae vesrion web pour un emploi de développeur front-end"
     />
+
     <meta property="og:title" content="Curriculum vitae NIEDDU Nicolas" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./assets/pp.webp" />
@@ -17,6 +18,7 @@
       property="og:description"
       content="Mon curriculum vitae vesrion web pour un emploi de développeur front-end"
     />
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -36,68 +38,15 @@
     />
     <link rel="manifest" href="./assets/favicons/site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <script defer src="./assets/scripts/mobileActions.js"></script>
     <script defer src="./assets/scripts/actions.js"></script>
-    <script defer src="./assets/scripts/controls.js"></script>
+    <script defer src="./assets/scripts/keyboardEvent.js"></script>
+    <script defer src="./assets/scripts/edit.js"></script>
+    <script defer src="./assets/scripts/dataControl.js"></script>
     <script defer src="./assets/scripts/utils.js"></script>
     <script defer src="./assets/scripts/listeners.js"></script>
     <script defer src="./script.js"></script>
   </head>
   <body>
-    <nav id="context-menu" class="context-menu">
-      <ul>
-        <li>
-          <a href="#" class="context-menu-action" data-action="Edit">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-pencil-minus"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="#0066aa"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"
-              ></path>
-              <path d="M13.5 6.5l4 4"></path>
-              <path d="M16 18h4"></path>
-            </svg>
-            Edit element</a
-          >
-        </li>
-
-        <li>
-          <a href="#" class="context-menu-action" data-action="Remove">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-trash"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="#0066aa"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <line x1="4" y1="7" x2="20" y2="7"></line>
-              <line x1="10" y1="11" x2="10" y2="17"></line>
-              <line x1="14" y1="11" x2="14" y2="17"></line>
-              <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-              <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-            </svg>
-            Remove element</a
-          >
-        </li>
-      </ul>
-    </nav>
-
     <div id="right-pannel">
       <h1>Développeur front-end</h1>
       <br />
@@ -252,23 +201,113 @@
       </div>
     </div>
 
+    <!-- ---------------------------------->
+    <!-- --- context-menu ----------------->
+    <!-- ---------------------------------->
+    <nav id="context-menu" class="context-menu">
+      <ul>
+        <li>
+          <a href="#" class="context-menu-action" data-action="Edit">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#0066aa"
+              fill="none"
+            >
+              <path stroke="none" fill="none"></path>
+              <path
+                d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"
+              ></path>
+              <path d="M13.5 6.5l4 4"></path>
+              <path d="M16 18h4"></path>
+            </svg>
+            Edit element</a
+          >
+        </li>
+
+        <li>
+          <a href="#" class="context-menu-action" data-action="Remove">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#0066aa"
+              fill="none"
+            >
+              <path stroke="none" fill="none"></path>
+              <line x1="4" y1="7" x2="20" y2="7"></line>
+              <line x1="10" y1="11" x2="10" y2="17"></line>
+              <line x1="14" y1="11" x2="14" y2="17"></line>
+              <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+              <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+            </svg>
+            Remove element</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ---------------------------------->
+    <!-- ---hidden-panel ------------------>
+    <!-- ---------------------------------->
+    <div id="hidden-panel">
+      <div class="hidden-panel-content">
+        <nav class="hidden-panel-nav">
+          <h3 id="pannel-target">Edit Pannel</h3>
+          <div class="hidden-panel-text"></div>
+          <ul id="pannel-available-options">
+            <li>
+              <a class="context-menu-action" href="#" data-action="txtColor"
+                >Text color</a
+              >
+            </li>
+            <input
+              id="colorWell"
+              class="context-menu-action"
+              type="color"
+              value="#ff0000"
+            />
+            <li>
+              <a class="context-menu-action" href="#" data-action="txtSize"
+                >Font size</a
+              >
+            </li>
+            <li>
+              <a class="context-menu-action" href="#" data-action="bgColor"
+                >Background color</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="hidden-panel-text">
+          <p>
+            Apres avoir clique sur "Editer", vous pouvez modifier le contenu
+            textuelle avec votre clavier (s'il s'agit d'un element avec du
+            text.)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------->
+    <!-- ---Mobile nav -------------------->
+    <!-- ---------------------------------->
     <div class="nav">
       <!-- <div class="nav-title">CvMaker</div> -->
       <div class="nav-links">
         <svg
           id="cursorBtn"
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-pointer"
           width="48"
           height="48"
           viewBox="0 0 24 24"
           stroke-width="2"
           stroke="#0066aa"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
         >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path stroke="none" fill="none"></path>
           <path
             d="M6 6l4.153 11.793a0.365 .365 0 0 0 .331 .207a0.366 .366 0 0 0 .332 -.207l2.184 -4.793l4.787 -1.994a0.355 .355 0 0 0 .213 -.323a0.355 .355 0 0 0 -.213 -.323l-11.787 -4.36z"
           ></path>
@@ -276,18 +315,14 @@
         </svg>
         <svg
           id="removeBtn"
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-trash"
           width="48"
           height="48"
           viewBox="0 0 24 24"
           stroke-width="2"
           stroke="#0066aa"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
         >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path stroke="none" fill="none"></path>
           <line x1="4" y1="7" x2="20" y2="7"></line>
           <line x1="10" y1="11" x2="10" y2="17"></line>
           <line x1="14" y1="11" x2="14" y2="17"></line>
@@ -296,18 +331,14 @@
         </svg>
         <svg
           id="editBtn"
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-pencil-minus"
           width="48"
           height="48"
           viewBox="0 0 24 24"
           stroke-width="2"
           stroke="#0066aa"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
         >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path stroke="none" fill="none"></path>
           <path
             d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"
           ></path>
@@ -316,18 +347,14 @@
         </svg>
         <svg
           id="colorPickBtn"
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-color-picker"
           width="48"
           height="48"
           viewBox="0 0 24 24"
           stroke-width="2"
           stroke="#0066aa"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
         >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path stroke="none" fill="none"></path>
           <path d="M11 7l6 6"></path>
           <path
             d="M4 16l11.7 -11.7a1 1 0 0 1 1.4 0l2.6 2.6a1 1 0 0 1 0 1.4l-11.7 11.7h-4v-4z"
@@ -335,48 +362,26 @@
         </svg>
         <svg
           id="downloadBtn"
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-download"
           width="48"
           height="48"
           viewBox="0 0 24 24"
           stroke-width="2"
           stroke="#0066aa"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
         >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path stroke="none" fill="none"></path>
           <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
           <polyline points="7 11 12 16 17 11"></polyline>
           <line x1="12" y1="4" x2="12" y2="16"></line>
         </svg>
       </div>
     </div>
-
-    <div id="hidden-panel">
-      <div class="hidden-panel-content">
-        <nav class="hidden-panel-nav">
-          <h3 id="pannel-target">Edit Pannel</h3>
-          <ul id="pannel-available-options">
-            <li><a class="context-menu-action" href="#" data-action="txtColor">Text color</a></li>
-            <input id= "colorWell" class="context-menu-action" type="color" value="#ff0000">
-            <li><a class="context-menu-action" href="#" data-action="txtSize">Font size</a></li>
-            <li><a class="context-menu-action" href="#" data-action="bgColor">Background color</a></li>
-          </ul>
-        </nav>
-        <div class="hidden-panel-text">
-          <p>
-            Apres avoir clique sur "Editer", vous pouvez modifier
-            le contenu textuelle avec votre clavier (s'il s'agit d'un element avec du text.)
-          </p>
-        </div>
-      </div>
-    </div>
-
+    
+    <!-- DOWNLOAD FORM  -->
     <!-- <form onsubmit="download('index.html', this['text'].value)">
       <textarea name="text"></textarea>
       <input type="submit" value="Download" />
     </form> -->
+
   </body>
 </html>

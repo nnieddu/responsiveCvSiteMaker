@@ -1,11 +1,5 @@
 "use strict";
 
-const contextMenuLinkClassName = "context-menu-action";
-const contextMenuActive = "context-menu-active";
-const contextContainerClassName = "context-menu";
-const menu = document.querySelector("#context-menu");
-let menuState = 0;
-
 let targetClicked;
 
 let history;

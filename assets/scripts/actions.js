@@ -1,26 +1,31 @@
-var colorWell
-var defaultColor = "#0000ff";
+"use strict";
+
+var colorEditMode = 1;
+var colorWell;
+var defaultColor = "#209934";
 
 window.addEventListener("load", startup, false);
 
 function startup() {
-    colorWell = document.querySelector("#colorWell");
-    colorWell.value = defaultColor;
-    colorWell.addEventListener("input", updateFirst, false);
-    colorWell.addEventListener("change", updateAll, false);
-    colorWell.select();
+  colorWell = document.querySelector("#colorWell");
+  colorWell.value = defaultColor;
+//   console.log(targetClicked.target.style.color)
+  colorWell.addEventListener("input", updateFirst, false);
+  colorWell.addEventListener("change", updateAll, false);
+  colorWell.select();
 }
 
 function updateFirst(event) {
-    targetClicked.target.style.color = event.target.value;
-  }
+  targetClicked.target.style.color = event.target.value;
+}
 
-  function updateAll(event) {
-    targetClicked.target.style.color = event.target.value;
-  }
-  
+function updateAll(event) {
+  targetClicked.target.style.color = event.target.value;
+}
 
-
+// ----------------------------------------
+// ----------------------------------------
+// ----------------------------------------
 function doAction(action) {
   if (action === "Remove") {
     targetClicked.target.remove();
@@ -29,13 +34,10 @@ function doAction(action) {
   }
 
   if (action === "Edit") {
-    editState = 1;
-    document.getElementById("hidden-panel").style.opacity = 1;
-    document.body.classList.toggle("panel-open");
-    document.getElementById("pannel-target").innerText = targetClicked.target.innerText;
+    hiddenPannelOn();
   }
 
-  if (action === "txtColor") {
-      startup();
-  }
+//   if (action === "txtColor") {
+//     startup();
+//   }
 }
