@@ -1,22 +1,21 @@
 "use strict";
 
 function doAction(action) {
-  if (action === "Remove") {
-    console.log("REMOVE")
-    targetClicked.target.remove();
-    if (!historySize) 
-      historySize++;
-    return;
+  switch (action) {
+    case "Remove":
+      if (targetClicked)
+        targetClicked.target.remove();
+      break;
+    case "Edit":
+      toggleHiddenPannel();
+      break;
+    case "txtColor":
+      document.body.style.cursor = "url(./../../cursor.svg) 4 12, auto";
+      startup();
+      break;
+    default:
+      null;
   }
 
-  if (action === "Edit") {
-    toggleHiddenPannel();
-  }
-
-  // if (colorEditMode) startup();
-
-  if (action === "txtColor") {
-    document.body.style.cursor = "url(./../../cursor.svg) 4 12, auto";
-    startup();
-  }
+  if (!historySize) historySize++;
 }
