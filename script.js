@@ -16,6 +16,9 @@ const cursorBtn = document.querySelector("#cursorBtn");
 const removeBtn = document.querySelector("#removeBtn");
 const editBtn = document.querySelector("#editBtn");
 const colorPickBtn = document.querySelector("#colorPickBtn");
+const hiddenPannel = document.getElementById("hidden-panel");
+
+const changePanSide = document.getElementById("changePanSide");
 
 function init() {
   contextListener();

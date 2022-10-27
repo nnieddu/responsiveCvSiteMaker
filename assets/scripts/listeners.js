@@ -29,7 +29,16 @@ function clickListener() {
   document.addEventListener("click", function (e) {
     let clickedIsLink = clickInsideElement(e, contextMenuLinkClassName);
     contextualMenuOff();
+    targetClicked = e;
+    if (targetClicked)
+      document.getElementById("pannel-target").innerText =
+        "[ " +
+        targetClicked.target.localName +
+        " ]  \n\n" +
+        targetClicked.target.innerText;
     // getHtmlTag(e);
+    console.log(e);
+
     if (clickedIsLink) {
       // e.preventDefault();
       doAction(clickedIsLink.getAttribute("data-action"));
@@ -48,18 +57,18 @@ function clickListener() {
     // --------------------------------
     // ----------- Edit pannel --------
     // --------------------------------
-    if (
-      editState &&
-      e.target !== document.getElementById("colorWell") &&
-      !clickedIsLink
-    ) {
-      targetClicked = e;
-      document.getElementById("pannel-target").innerText =
-        "[ " +
-        targetClicked.target.localName +
-        " ] \n" +
-        targetClicked.target.innerText;
-    }
+    // if (
+    //   editState &&
+    //   e.target !== document.getElementById("colorWell") &&
+    //   !clickedIsLink
+    // ) {
+    //   targetClicked = e;
+    //   document.getElementById("pannel-target").innerText =
+    //     "[ " +
+    //     targetClicked.target.localName +
+    //     " ] \n" +
+    //     targetClicked.target.innerText;
+    // }
 
     // --------------------------------
     // ----------- mobile nav bar -----
@@ -106,5 +115,13 @@ function mobileBtnListener() {
 
   colorPickBtn.addEventListener("click", () => {
     colorPickBtn.style.backgroundColor = "red";
+  });
+
+  colorPickBtn.addEventListener("click", () => {
+    colorPickBtn.style.backgroundColor = "red";
+  });
+
+  changePanSide.addEventListener("click", () => {
+    togglePanSide();
   });
 }

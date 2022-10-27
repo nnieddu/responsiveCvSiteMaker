@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curriculum vitae NIEDDU Nicolas</title>
     <meta
-    name="description"
-    content="Mon curriculum vitae vesrion web pour un emploi de développeur front-end"
+      name="description"
+      content="Mon curriculum vitae vesrion web pour un emploi de développeur front-end"
     />
 
     <meta property="og:title" content="Curriculum vitae NIEDDU Nicolas" />
@@ -41,6 +41,7 @@
     <script defer src="./assets/scripts/actions.js"></script>
     <script defer src="./assets/scripts/keyboardEvent.js"></script>
     <script defer src="./assets/scripts/edit.js"></script>
+    <script defer src="./assets/scripts/colorsHandling.js"></script>
     <script defer src="./assets/scripts/dataControl.js"></script>
     <script defer src="./assets/scripts/utils.js"></script>
     <script defer src="./assets/scripts/listeners.js"></script>
@@ -256,20 +257,26 @@
     <div id="hidden-panel">
       <div class="hidden-panel-content">
         <nav class="hidden-panel-nav">
+          <a href="#" id="changePanSide"><span id="arrow-left"> ◄ </span> Move pannel <span id="arrow-right"> ► </span></a>
           <h3 id="pannel-target">Edit Pannel</h3>
           <div class="hidden-panel-text"></div>
           <ul id="pannel-available-options">
             <li>
-              <a class="context-menu-action" href="#" data-action="txtColor"
-                >Text color</a
-              >
+              <label for="colorWell"
+                >Color
+                <a
+                  class="context-menu-action"
+                  href="#"
+                  data-action="txtColor"
+                ></a
+              ></label>
+              <input
+                id="colorWell"
+                class="context-menu-action"
+                type="color"
+                value="#ff0000"
+              />
             </li>
-            <input
-              id="colorWell"
-              class="context-menu-action"
-              type="color"
-              value="#ff0000"
-            />
             <li>
               <a class="context-menu-action" href="#" data-action="txtSize"
                 >Font size</a
@@ -284,9 +291,8 @@
         </nav>
         <div class="hidden-panel-text">
           <p>
-            Apres avoir clique sur "Editer", vous pouvez modifier le contenu
-            textuelle avec votre clavier (s'il s'agit d'un element avec du
-            text.)
+            Apres avoir clique sur "Editer", vous pouvez modifier le text avec votre clavier (s'il s'agit d'un element avec du
+            texte.)
           </p>
         </div>
       </div>
@@ -376,12 +382,11 @@
         </svg>
       </div>
     </div>
-    
+
     <!-- DOWNLOAD FORM  -->
     <!-- <form onsubmit="download('index.html', this['text'].value)">
       <textarea name="text"></textarea>
       <input type="submit" value="Download" />
     </form> -->
-
   </body>
 </html>

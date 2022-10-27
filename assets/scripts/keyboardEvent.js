@@ -1,12 +1,12 @@
 "use strict";
 
 function manageKeyboardInput(e) {
-  console.log(e.keyCode);
-  console.log(e.key);
+  // console.log(e.keyCode);
+  // console.log(e.key);
 
   if (e.keyCode == 9 || e.key === "Tab") {
     e.preventDefault();
-    doAction("Edit");
+    toggleHiddenPannel();
     return;
   }
 
@@ -16,6 +16,7 @@ function manageKeyboardInput(e) {
   }
 
   if (editState) {
+    e.preventDefault();
     if (e.keyCode == 8 || e.key === "Backspace" || e.key === "Delete") {
       targetClicked.srcElement.innerText =
         targetClicked.srcElement.innerText.slice(0, -1);
