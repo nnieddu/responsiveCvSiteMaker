@@ -13,3 +13,4 @@ to custom a responsive CV site like this : https://nnieddu.github.io/
 ```Edit```
 ```Remove```
 
+<!-- git clone --recurse-submodules https://github.com/nnieddu/cv-site.git -->
