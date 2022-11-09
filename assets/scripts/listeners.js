@@ -1,9 +1,9 @@
 "use strict";
 
 const contextMenuLinkClassName = "context-menu-action";
-const contextMenuActive = "context-menu-active";
 const contextContainerClassName = "context-menu";
 const menu = document.querySelector("#context-menu");
+let   pannelTarget = document.getElementById("pannel-target");
 
 /* ------------------------------------------------------- */
 /* context listeners for contextmenu events (right click). */
@@ -16,31 +16,30 @@ function contextListener() {
       contextualMenuOn();
       positionMenu(e);
       targetClicked = e;
+      console.log(targetClicked.target);
+      if (targetClicked)
+        pannelTarget =
+          "[ " + targetClicked.target.localName + " ]  \n\n" +
+            targetClicked.target.innerText;
+      historyHandling(e);
     }
   });
 }
 
 /* ------------------------------------------------------- */
-/* clicks listeners ---------------------------------------*/
+/* clicks listeners -------------------------------------- */
 /* ------------------------------------------------------- */
 function clickListener() {
   document.addEventListener("click", function (e) {
     let clickedIsLink = clickOnElem(e, contextMenuLinkClassName);
     contextualMenuOff();
-    
-    if (e) {
-      targetClicked = e;
-      document.getElementById("pannel-target").innerText ="[ " + 
-        targetClicked.target.localName + " ]  \n\n" + targetClicked.target.innerText;
-      }
-
     if (clickedIsLink) {
-      historyHandling(e);
+      // console.log(clickedIsLink);
+      // console.log(targetClicked);
+      console.log("CLICKED~");
       doAction(clickedIsLink.getAttribute("data-action"));
       contextualMenuOff();
     }
-    // if (removeState)
-    //   doAction("Remove");
   });
 }
 
@@ -63,5 +62,5 @@ function windowResizeListener() {
 /* Buttons listeners --------------------------------------*/
 /* ------------------------------------------------------- */
 changePanSideBtn.addEventListener("click", () => {
-    togglePanSide();
+  togglePanSide();
 });

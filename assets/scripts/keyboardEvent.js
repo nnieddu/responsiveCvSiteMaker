@@ -10,6 +10,7 @@ function manageKeyboardInput(e) {
   if (e.keyCode == 90 && e.ctrlKey && historySize) {
     historyPath.outerHTML = history;
     historySize--;
+    return;
   }
 
   if (editState) {

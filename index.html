@@ -52,11 +52,31 @@
     <div id="right-pannel">
       <h1>Développeur front-end</h1>
       <br />
+      <!-- <div class="range-container">
+        <input type="range" id="password-length" min="4" max="24" value="8"
+          oninput="document.getElementById('display-password-length').value=this.value">
+        <input type="text" id="display-password-length" value="8" readonly>
+      </div> -->
+  
+      <!-- <div class="checkbox-container">
+        <input type="checkbox" id="lowercase" checked>
+        <label for="lowercase">a-z</label>
+  
+        <input type="checkbox" id="uppercase">
+        <label for="uppercase">A-Z</label>
+  
+        <input type="checkbox" id="numbers">
+        <label for="numbers">0-9</label>
+  
+        <input type="checkbox" id="symbols">
+        <label for="symbols">!-?</label>
+      </div> -->
+  
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
-        excepturi nesciunt. Molestias deleniti omnis soluta, enim id optio
-        placeat sapiente impedit ipsum laudantium aut modi maxime, possimus
-        facere magnam maiores quos, reiciendis molestiae earum repellat dicta
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, excepturi
+        nesciunt. Molestias deleniti omnis soluta, enim id optio placeat sapiente impedit
+        ipsum laudantium aut modi maxime, possimus facere magnam maiores quos, reiciendis
+        molestiae earum repellat dicta
       </p>
       <br />
       <div class="interlayer"></div>
@@ -168,10 +188,7 @@
       </ul>
       <div id="logo-ctn">
         <picture>
-          <source
-            srcset="./assets/logos/Linkedin-Logo.webp"
-            type="image/webp"
-          />
+          <source srcset="./assets/logos/Linkedin-Logo.webp" type="image/webp" />
           <source srcset="./assets/logos/Linkedin-Logo.png" type="image/png" />
           <img
             width="85px"
@@ -183,14 +200,8 @@
           />
         </picture>
         <picture>
-          <source
-            srcset="./assets/logos/GitHub_Logo_White.webp"
-            type="image/webp"
-          />
-          <source
-            srcset="./assets/logos/GitHub_Logo_White.png"
-            type="image/png"
-          />
+          <source srcset="./assets/logos/GitHub_Logo_White.webp" type="image/webp" />
+          <source srcset="./assets/logos/GitHub_Logo_White.png" type="image/png" />
           <img
             width="85px"
             height="35px"
@@ -209,7 +220,7 @@
     <nav id="context-menu" class="context-menu unclickable">
       <ul>
         <li>
-          <a href="#" class="context-menu-action" data-action="Edit">
+          <a hre data-action="Edit">
             <svg
               width="24"
               height="24"
@@ -219,9 +230,7 @@
               fill="none"
             >
               <path stroke="none" fill="none"></path>
-              <path
-                d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"
-              ></path>
+              <path d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"></path>
               <path d="M13.5 6.5l4 4"></path>
               <path d="M16 18h4"></path>
             </svg>
@@ -230,7 +239,7 @@
         </li>
 
         <li>
-          <a href="#" class="context-menu-action" data-action="Remove">
+          <a hre data-action="Remove">
             <svg
               width="24"
               height="24"
@@ -260,35 +269,27 @@
         <nav class="hidden-panel-nav">
           <a href="#" id="changePanSideBtn"
             ><span id="arrow-left"> ◄ </span> Move pannel
-            <span id="arrow-right"> ► </span></a>
+            <span id="arrow-right"> ► </span></a
+          >
           <h3 id="pannel-target">Edit Pannel</h3>
           <div class="hidden-panel-text"></div>
           <ul id="pannel-available-options">
-            <li class="context-menu-action" >
-              <label class="context-menu-action" for="colorWell" data-action="txtColor">Color </label>
-              <input
-                id="colorWell"
-                class="context-menu-action"
-                type="color"
-                value="#0066aa"
-              />
+            <li>
+              <label for="colorWell" data-action="txtColor">Color </label>
+              <input id="colorWell" type="color" value="#0066aa" />
             </li>
             <li>
-              <a class="context-menu-action" href="#" data-action="txtSize"
-                >Font size</a
-              >
+              <a href="#" data-action="txtSize">Font size</a>
             </li>
             <li>
-              <a class="context-menu-action" href="#" data-action="bgColor"
-                >Background color</a
-              >
+              <a href="#" data-action="bgColor">Background color</a>
             </li>
           </ul>
         </nav>
-        <div class="hidden-panel-text context-menu-action">
+        <div class="hidden-panel-text">
           <p>
-            Apres avoir clique sur "Editer", vous pouvez modifier le text avec
-            votre clavier (s'il s'agit d'un element avec du texte.)
+            Apres avoir clique sur "Editer", vous pouvez modifier le text avec votre
+            clavier (s'il s'agit d'un element avec du texte.)
           </p>
         </div>
       </div>
@@ -299,88 +300,103 @@
     <!-- ---------------------------------->
     <div id="mobileNavBar">
       <!-- <div class="nav-title">CvMaker</div> -->
-      <div class="nav-links">
-        <svg
-          id="cursorBtn"
-          class="context-menu-action"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="#0066aa"
-          fill="none"
-        >
-          <path stroke="none" fill="none"></path>
-          <path
-            d="M6 6l4.153 11.793a0.365 .365 0 0 0 .331 .207a0.366 .366 0 0 0 .332 -.207l2.184 -4.793l4.787 -1.994a0.355 .355 0 0 0 .213 -.323a0.355 .355 0 0 0 -.213 -.323l-11.787 -4.36z"
-          ></path>
-          <path d="M13.5 13.5l4.5 4.5"></path>
-        </svg>
-        <svg
-          id="removeBtn"
-          class="context-menu-action"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="#0066aa"
-          fill="none"
-        >
-          <path stroke="none" fill="none"></path>
-          <line x1="4" y1="7" x2="20" y2="7"></line>
-          <line x1="10" y1="11" x2="10" y2="17"></line>
-          <line x1="14" y1="11" x2="14" y2="17"></line>
-          <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-          <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-        </svg>
-        <svg
-          id="editBtn"
-          class="context-menu-action"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="#0066aa"
-          fill="none"
-        >
-          <path stroke="none" fill="none"></path>
-          <path
-            d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"
-          ></path>
-          <path d="M13.5 6.5l4 4"></path>
-          <path d="M16 18h4"></path>
-        </svg>
-        <svg
-          id="colorPickBtn"
-          class="context-menu-action"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="#0066aa"
-          fill="none"
-        >
-          <path stroke="none" fill="none"></path>
-          <path d="M11 7l6 6"></path>
-          <path
-            d="M4 16l11.7 -11.7a1 1 0 0 1 1.4 0l2.6 2.6a1 1 0 0 1 0 1.4l-11.7 11.7h-4v-4z"
-          ></path>
-        </svg>
-        <svg
-          id="downloadBtn"
-          class="context-menu-action"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="#0066aa"
-          fill="none"
-        >
-          <path stroke="none" fill="none"></path>
-          <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-          <polyline points="7 11 12 16 17 11"></polyline>
-          <line x1="12" y1="4" x2="12" y2="16"></line>
-        </svg>
+      <!-- <div class="nav-links"> -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="lowercase" checked>
+          <label for="lowercase">
+            <svg
+            id="cursorBtn" width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="#0066aa"
+            fill="none">
+            <path stroke="none" fill="none"></path>
+            <path
+              d="M6 6l4.153 11.793a0.365 .365 0 0 0 .331 .207a0.366 .366 0 0 0 .332 -.207l2.184 -4.793l4.787 -1.994a0.355 .355 0 0 0 .213 -.323a0.355 .355 0 0 0 -.213 -.323l-11.787 -4.36z"
+            ></path>
+            <path d="M13.5 13.5l4.5 4.5"></path>
+          </svg>
+        </label>
+
+          <input type="checkbox" id="uppercase">
+          <label for="uppercase">
+            <svg
+            id="removeBtn"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="#0066aa"
+            fill="none"
+          >
+            <path stroke="none" fill="none"></path>
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="10" y1="11" x2="10" y2="17"></line>
+            <line x1="14" y1="11" x2="14" y2="17"></line>
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+          </svg>
+          </label>
+    
+          <input type="checkbox" id="numbers">
+          <label for="numbers">
+            <svg
+            id="editBtn"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="#0066aa"
+            fill="none"
+          >
+            <path stroke="none" fill="none"></path>
+            <path d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"></path>
+            <path d="M13.5 6.5l4 4"></path>
+            <path d="M16 18h4"></path>
+          </svg>
+          </label>
+    
+          <input type="checkbox" id="symbols">
+          <label for="symbols">
+            <svg
+            id="colorPickBtn"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="#0066aa"
+            fill="none"
+          >
+            <path stroke="none" fill="none"></path>
+            <path d="M11 7l6 6"></path>
+            <path
+              d="M4 16l11.7 -11.7a1 1 0 0 1 1.4 0l2.6 2.6a1 1 0 0 1 0 1.4l-11.7 11.7h-4v-4z"
+            ></path>
+          </svg></label>
+
+          <input type="checkbox" id="symbols">
+          <label for="symbols">
+            <svg
+            id="downloadBtn"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="#0066aa"
+            fill="none"
+          >
+            <path stroke="none" fill="none"></path>
+            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+            <polyline points="7 11 12 16 17 11"></polyline>
+            <line x1="12" y1="4" x2="12" y2="16"></line>
+          </svg></label>
+
+        <!-- </div> -->
+
+
+
+
       </div>
     </div>
 

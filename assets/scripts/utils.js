@@ -1,5 +1,6 @@
 "use strict";
 
+const contextMenuActive = "context-menu-active";
 let menuState = 0;
 
 // function download(filename, text) {

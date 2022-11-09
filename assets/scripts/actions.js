@@ -3,8 +3,7 @@
 function doAction(action) {
   switch (action) {
     case "Remove":
-      if (targetClicked)
-        targetClicked.target.remove();
+      if (targetClicked) targetClicked.target.remove();
       break;
     case "Edit":
       toggleHiddenPannel();
