@@ -22,5 +22,5 @@ Edit text and change colors.
 ```Change background color```
 ```Change pans background color```
 
-
+FIX
 <!-- git clone --recurse-submodules https://github.com/nnieddu/cv-site.git -->
