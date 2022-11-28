@@ -1,10 +1,12 @@
 # responsiveCvSiteMaker
 
+
 Simple, and light WebApp/Interface that allow you to edit the DOM   
 to custom a responsive little site.
   
 Full html, css and vanilla javascript.
     
+## ABANDONNED PROJECT, MIGRATING TO REACT
     
 ##Possible actions :
   
@@ -30,4 +32,5 @@ You can open the edit pannel by using the contextual menu (right click then clic
 TODO :  
 * font size edit  
 * background color edit  
+* debug / code refactoring
 * downloadable ready to deploy archive 
