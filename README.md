@@ -10,17 +10,24 @@ Full html, css and vanilla javascript.
   
 Edit text and change colors.
   
-###Backward action history (1 max for the moment, array history intended)
+###Backward action (1 max for the moment, array history intended)
 ```ctrl + z```
   
 ###Rigth-click contextual menu on clicked element with two option :
-```Edit```
-```Remove```
+```Edit```  
+Edit allow you to edit the color or the text content of the targeted element.
 
-###Edit Pannel
+```Remove```  
+Remove the targeted element.
+
+###Edit Pannel  
+You can open the edit pannel by using the contextual menu (right click then click on Edit) or with the TAB button.
+
 ```Change content color```
-```Change background color```
-```Change pans background color```
+<!-- ```Change background color``` -->
 
-FIX
-<!-- git clone --recurse-submodules https://github.com/nnieddu/cv-site.git -->
+  
+TODO :  
+* font size edit  
+* background color edit  
+* downloadable ready to deploy archive 

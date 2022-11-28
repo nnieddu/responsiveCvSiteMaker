@@ -244,8 +244,8 @@ a {
   z-index: 1;
   padding: 12px 0;
   width: 240px;
-  background-color: #fff;
-  border: solid 1px #dfdfdf;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px #000000;
   box-shadow: 1px 1px 2px #cfcfcf;
   border-radius: 10px;
   transform: scale(0);
@@ -322,7 +322,6 @@ a {
   background-color: #eee;
   padding: 2% 2%;
   display: block;
-  text-transform: uppercase;
   transition: color 0.5 s ease-out;
   box-shadow: 1px 1px 5px 0px rgba(71, 71, 71, 0.6);
   border-radius: 8px;
@@ -361,10 +360,6 @@ a {
 
 .hidden-panel-content {
   padding: 1em 10%;
-}
-
-.hidden-panel-nav {
-  text-transform: uppercase;
 }
 
 .hidden-panel-nav ul {
@@ -532,10 +527,10 @@ button:active {
 /* ------------------------------------------------------- */
 
 @media screen and (min-width: 800px) {
-  h1::before {
+  /* h1::before {
     color: red;
     content: "2";
-  }
+  } */
 
   body {
     flex-direction: row-reverse;
@@ -569,10 +564,10 @@ button:active {
 }
 
 @media screen and (min-width: 1250px) {
-  h1::before {
+  /* h1::before {
     color: red;
     content: "3";
-  }
+  } */
 
   body {
     font-size: 1.1rem;
