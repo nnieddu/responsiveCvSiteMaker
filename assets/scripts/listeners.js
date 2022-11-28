@@ -15,12 +15,15 @@ function contextListener() {
     if (!taskItemInContext) {
       contextualMenuOn();
       positionMenu(e);
+      if (targetClicked)
+        targetClicked.target.classList.remove("editableTarget");
       targetClicked = e;
       console.log(targetClicked.target);
-      if (targetClicked)
+      if (targetClicked) {
         pannelTarget =
           "[ " + targetClicked.target.localName + " ]  \n\n" +
             targetClicked.target.innerText;
+      }
       historyHandling(e);
     }
   });
@@ -31,15 +34,14 @@ function contextListener() {
 /* ------------------------------------------------------- */
 function clickListener() {
   document.addEventListener("click", function (e) {
-    let clickedIsLink = clickOnElem(e, contextMenuLinkClassName);
+    // let clickedIsLink = clickOnElem(e, contextMenuLinkClassName);
     contextualMenuOff();
-    if (clickedIsLink) {
+    // if (clickedIsLink) {
       // console.log(clickedIsLink);
       // console.log(targetClicked);
-      console.log("CLICKED~");
-      doAction(clickedIsLink.getAttribute("data-action"));
-      contextualMenuOff();
-    }
+      doAction(e.target.getAttribute("data-action"));
+      // contextualMenuOff();
+    // }
   });
 }
 

@@ -7,7 +7,7 @@
     <title>Curriculum vitae NIEDDU Nicolas</title>
     <meta
       name="description"
-      content="Mon curriculum vitae vesrion web pour un emploi de développeur front-end"
+      content="Mon curriculum vitae vesrion web"
     />
 
     <meta property="og:title" content="Curriculum vitae NIEDDU Nicolas" />
@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://nnieddu.github.io/" />
     <meta
       property="og:description"
-      content="Mon curriculum vitae vesrion web pour un emploi de développeur front-end"
+      content="Mon curriculum vitae vesrion web"
     />
 
     <link
@@ -38,19 +38,30 @@
     />
     <link rel="manifest" href="./assets/favicons/site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <script defer src="./assets/scripts/history.js"></script>
-    <script defer src="./assets/scripts/mobile.js"></script>
-    <script defer src="./assets/scripts/actions.js"></script>
-    <script defer src="./assets/scripts/keyboardEvent.js"></script>
-    <script defer src="./assets/scripts/edit.js"></script>
-    <script defer src="./assets/scripts/colorsHandling.js"></script>
-    <script defer src="./assets/scripts/utils.js"></script>
-    <script defer src="./assets/scripts/listeners.js"></script>
-    <script defer src="./script.js"></script>
+    <script src="./assets/scripts/history.js" defer></script>
+    <script src="./assets/scripts/mobile.js" defer></script>
+    <script src="./assets/scripts/actions.js" defer></script>
+    <script src="./assets/scripts/keyboardEvent.js" defer></script>
+    <script src="./assets/scripts/edit.js" defer></script>
+    <script src="./assets/scripts/colorsHandling.js" defer></script>
+    <script src="./assets/scripts/utils.js" defer></script>
+    <script src="./assets/scripts/listeners.js" defer></script>
+    <script src="./script.js" defer></script>
+
   </head>
   <body>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>WARNING</h3>
+    <p>WORK IN PROGRESS, CURENTLY BUGS AND UNFINISHED FEATURES</p>
+    <h4>Open the edit pannel with the TAB button, then right click on an element to edit it or to remove it.</h4>
+  </div>
+
+</div> 
     <div id="right-pannel">
-      <h1>Développeur front-end</h1>
+      <h1>Lorem ipsum</h1>
       <br />
       <!-- <div class="range-container">
         <input type="range" id="password-length" min="4" max="24" value="8"
@@ -159,12 +170,11 @@
         <li>Nicolas NIEDDU</li>
         <li>28 ans</li>
         <li>Permis B</li>
-        <li id="perso-adress">Fontaines-sur-Saône, 69270</li>
+        <li id="perso-adress">Your address</li>
         <li>
-          <a href="#">nicolas.nieddu@free.fr</a>
-          <!-- <a href="mailto:nicolas.nieddu@free.fr">nicolas.nieddu@free.fr</a> -->
+          <a>mail@mail.com</a>
         </li>
-        <li>06.79.05.65.55</li>
+        <li>Phone number</li>
         <li><br /><br /></li>
         <li><h2>Compétences</h2></li>
         <li>Anglais (intermédiaire)</li>
@@ -274,7 +284,7 @@
           <h3 id="pannel-target">Edit Pannel</h3>
           <div class="hidden-panel-text"></div>
           <p style="color: white">The target element is represeted with a black border during editing</p><br/>
-          <p style="color: white">Change text color after clicking on "Edit Element" on the target element : </p><br/>
+          <p style="color: white">Change text color : </p><br/>
           <ul id="pannel-available-options">
             <li>
               <!-- <label for="colorWell" data-action="txtColor">Color </label> -->
