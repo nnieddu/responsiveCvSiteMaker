@@ -1,6 +1,6 @@
-var colorEditMode = 1;
-var colorWell;
-var defaultColor = "#209934";
+let colorEditMode = 1;
+let colorWell;
+let defaultColor = "#209934";
 
 window.addEventListener("load", startup, false);
 
